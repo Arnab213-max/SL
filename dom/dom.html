@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.6;
+        }
+        header {
+            margin-bottom: 1.5rem;
+        }
+        #demo {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #f7f7f7;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DOM Demo</h1>
+        <p>This page uses JavaScript to change the document object model (DOM) live.</p>
+    </header>
+
+    <div id="demo"></div>
+    <button id="updateButton">Show DOM details</button>
+
+    <script>
+        const demoDiv = document.getElementById('demo');
+        const updateButton = document.getElementById('updateButton');
+
+        function showDomContent() {
+            const title = document.title;
+            const language = document.documentElement.lang;
+            const bodyChildCount = document.body.childElementCount;
+            const elementHtml = demoDiv.outerHTML;
+
+            demoDiv.innerHTML = `
+                <strong>Document title:</strong> ${title}<br>
+                <strong>HTML language:</strong> ${language}<br>
+                <strong>Body child elements:</strong> ${bodyChildCount}<br>
+                <strong>Demo element HTML:</strong><br>
+                <code>${elementHtml.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code>
+            `;
+        }
+
+        updateButton.addEventListener('click', showDomContent);
+
+        demoDiv.textContent = 'Click the button below to display DOM information about this page.';
+    </script>
+</body>
+</html>
