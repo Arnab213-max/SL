@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>Lab4: Form Validation with Javascript</h1>
+        <p style="text-align:justify;">
+            In this lab, we will create a simple form and validate the input using JavaScript.
+             The form will include fields for the user's name, email, and password.
+              We will use JavaScript to ensure that the user has entered valid information before allowing
+               them to submit the form.
+        </p>
+        <form id="signupForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" >
+            <span id="nameError" class="error"></span>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email">
+            <span id="emailError" class="error"></span>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" >
+            <span id="passwordError" class="error"></span>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <button type="submit" id="signupButton">Sign Up</button>
+        </form>
+        <script src="script.js"></script>
+    </section>
+</body>
+</html>
